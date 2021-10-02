@@ -1,16 +1,10 @@
-import './App.css';
-import ChatHistory from '../chat-history/ChatHistory';
+import Contenedor from '../components/Contenedor';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-      </header>
-      <ChatHistory />
-    </div>
+    <>
+      <Contenedor />
+    </>
   );
 }
 
