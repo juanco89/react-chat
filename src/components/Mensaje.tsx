@@ -1,17 +1,18 @@
 import React from "react";
 
-export default class Mensaje extends React.Component {
-    render() {
-        const enviarMensaje = (mensaje: any) => {
-            console.log('Tipo Mensaje -> ',typeof(mensaje))
-            alert(mensaje);
-            mensaje.preventDefault()
+function Mensaje(props: any) {
+
+        const [mensaje, setMensaje] = React.useState('');
+
+        const enviarMensaje = (evento: any) => {
+            props.onMensajeEnviado(mensaje);
+            evento.preventDefault();
         }
         return (
-        <div>
+        <div >
             <form onSubmit={enviarMensaje}>
                 <div>
-                    <input type="text">
+                    <input value={mensaje} type="text" onChange={(e) => setMensaje(e.target.value)}>
                     </input>
                 </div>
                 <div>
@@ -22,5 +23,7 @@ export default class Mensaje extends React.Component {
             </form>
         </div>
         );
-    }
+    
 }
+
+export default Mensaje;
