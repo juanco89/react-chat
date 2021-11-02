@@ -8,6 +8,7 @@ function Mensaje(props: any) {
             props.onMensajeEnviado(mensaje);
             evento.preventDefault();
         }
+
         return (
         <div >
             <form onSubmit={enviarMensaje}>

@@ -15,16 +15,10 @@ export default class Contenedor extends React.Component<{}, HistoryState> {
         super(props);
         
         this.state = { historial: [] };
-        
-        this.actualizarEstado = this.actualizarEstado.bind(this);
     }
     
-    enviarMensaje(mensaje: string) {
+    enviarMensaje = (mensaje: string) => {
         this.mensajes.push(mensaje);
-        this.actualizarEstado();
-    }
-
-    actualizarEstado() {
         this.setState( { historial: this.mensajes } );
     }
 
